@@ -9,3 +9,9 @@ This is a Node.js blog tutorial uses the Express Framework
 3. mongoose 
 
 
+#Run
+		node app.js
+		
+check in the browser: http://localhost:3000
+
+
