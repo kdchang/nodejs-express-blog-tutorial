@@ -1,11 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<% include blog/header %>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Node.js Blog</a>
+        </div>
+		<% include blog/nav_check_logined %>
+      </div>
+    </div>
+    <div class="container">
+	    <div class="panel panel-default post-panel">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">所有文章：</div>
+		  <!-- Table -->
+		  <table class="table">
+		  	<thead></thead>
+		  	<% blogs.forEach(function(blog){ %>
+		  	<tr>
+		  		<td><%= blog.Title %></td>
+		  		<td><%= blog.Content %></td>
+		  		<td><%= blog.Author %></td>
+		  		<td><%= blog.CreatedTime %></td>
+		  	</tr>
+		  	<% }); %>
+		  </table>
+		</div>
+    </div>
+<% include blog/footer %>
