@@ -1,0 +1,22 @@
+<% include header %>
+  <body>
+    <div class="container">
+      <form class="form-signin" action="/api/signup"  role="form" name="signup" method="post">
+        <h2 class="form-signin-heading">免費註冊：</h2>
+
+        <% if(havesignup) { %>
+          <% include dismissable_alerts%>
+        <% } %>
+        
+        <input type="text" class="form-control" name="username" placeholder="帳號" required autofocus>
+        <input type="password" class="form-control" name="password" placeholder="密碼" required>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">註冊去</button>
+        <br>
+        <a href="/">回首頁</a> 
+        <a href="/forget">忘記密碼</a> 
+      </form>
+    </div> <!-- /container -->
+<% include footer %>

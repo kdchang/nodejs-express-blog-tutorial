@@ -1,0 +1,14 @@
+<% if(username && password) { %>
+  <div>
+    <a href="/logout"><button type="submit" class="btn btn-success pull-right">登出</button></a>
+    <a href="/create"><button type="submit" class="btn btn-primary pull-right">新增文章</button></a>             
+    <a href="/profile"><button type="submit" class="btn btn-primary pull-right">個人Profile</button></a>
+    <span class="welcome pull-right">Hi, <%=username %></span>
+
+  </div><!--/.navbar-collapse -->
+<% } else { %>
+  <div>
+    <a href="/login"><button type="submit" class="btn btn-primary pull-right">登入</button></a>
+    <a href="/signup"><button type="submit" class="btn btn-success pull-right">免費註冊</button></a>
+  </div><!--/.navbar-collapse -->
+<% } %>
